@@ -132,67 +132,24 @@
 
             <!-- Note 1 -->
 
-            <article class="note-card">
+          <% notes.forEach(function(note){ %>
+              <article class="note-card">
 
                 <h3>Title</h3>
-                <h2>Learning JavaScript</h2>
+                <h2><%= note.title %></h2>
 
                 <h3>Description</h3>
                 <p>
-                    Today I learned about functions, arrays,
-                    objects and how JavaScript works with the DOM.
+                    <%= note.description %>
                 </p>
 
             </article>
+         <% }) %>
 
 
-            <!-- Note 2 -->
+        
 
-            <article class="note-card">
-
-                <h3>Title</h3>
-                <h2>My Project Idea</h2>
-
-                <h3>Description</h3>
-                <p>
-                    I want to build a simple notes application
-                    using HTML, CSS, JavaScript and localStorage.
-                </p>
-
-            </article>
-
-
-            <!-- Note 3 -->
-
-            <article class="note-card">
-
-                <h3>Title</h3>
-                <h2>Things To Learn</h2>
-
-                <h3>Description</h3>
-                <p>
-                    Practice JavaScript DOM manipulation,
-                    APIs, localStorage and asynchronous JavaScript.
-                </p>
-
-            </article>
-
-
-            <!-- Note 4 -->
-
-            <article class="note-card">
-
-                <h3>Title</h3>
-                <h2>Weekend Plans</h2>
-
-                <h3>Description</h3>
-                <p>
-                    Finish the notes project, push it to GitHub
-                    and start working on the next JavaScript project.
-                </p>
-
-            </article>
-
+          
         </section>
 
     </main>

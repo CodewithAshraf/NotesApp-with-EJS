@@ -20,12 +20,13 @@ app.post('/create',async function(req,res){
         title,
         description
     })
-    res.redirect('read');
+    res.redirect('/read');
 })
 
 
-app.get('/read',function(req,res){
-    res.render("read");
+app.get('/read', async function(req,res){
+    let allnotes = await notesmodel.find();
+    res.render("read",{notes:allnotes});
 })
 const PORT = 2000;
 
