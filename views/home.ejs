@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Notes</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #fafaf2;
+            color: #111;
+            font-family: Georgia, "Times New Roman", serif;
+            padding: 50px 20px; 
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        /* Header */
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 45px;
+            border-bottom: 1px solid #111;
+            padding-bottom: 20px;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: #777;
+            font-style: italic;
+        }
+
+        /* Form */
+
+        .note-form {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 30px;
+            margin-bottom: 50px;
+        }
+
+        .note-form h2 {
+            font-size: 22px;
+            margin-bottom: 25px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #bbb;
+            outline: none;
+            font-family: Georgia, "Times New Roman", serif;
+            background: transparent;
+            color: #111;
+        }
+
+        input {
+            font-size: 24px;
+            padding: 10px 0;
+            margin-bottom: 25px;
+        }
+
+        textarea {
+            font-size: 16px;
+            line-height: 1.7;
+            resize: vertical;
+            min-height: 130px;
+            padding: 10px 0;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-bottom-color: #111;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #999;
+        }
+
+        .add-btn {
+            margin-top: 25px;
+            background: #111;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .add-btn:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
+        /* Notes */
+
+        .notes-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .notes-header h2 {
+            font-size: 22px;
+        }
+
+        .notes-count {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .notes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .note {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 25px;
+            min-height: 180px;
+            transition: 0.25s ease;
+        }
+
+        .note:hover {
+            border-color: #111;
+            transform: translateY(-3px);
+        }
+
+        .note h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .note p {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .delete-btn {
+            margin-top: 20px;
+            background: transparent;
+            border: none;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 13px;
+            color: #888;
+            cursor: pointer;
+        }
+
+        .delete-btn:hover {
+            color: #111;
+        }
+
+        /* Empty state */
+
+        .empty {
+            text-align: center;
+            padding: 60px 20px;
+            color: #888;
+            border: 1px dashed #ccc;
+        }
+
+        .empty p:first-child {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 650px) {
+
+            body {
+                padding: 30px 15px;
+            }
+
+            .header {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .notes {
+                grid-template-columns: 1fr;
+            }
+
+            .note-form {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header class="header">
+            <div class="logo">Notes.</div>
+            <div class="tagline">Thoughts worth keeping.</div>
+        </header>
+
+
+        <section class="note-form">
+
+            <h2>Write something.</h2>
+            <form action="/create" method="post">
+            <input
+                type="text"
+                id="title"
+                name="title"
+                placeholder="Note title..."
+                required
+            >
+
+            <textarea
+                id="description"
+                name="description"
+                placeholder="Write your thoughts here..."
+                required
+            ></textarea>
+
+            <button class="add-btn">
+                 Add Note
+            </button>
+            </form>
+
+        </section>
+
+
+    </main>
+
+
+    
+
+</body>
+</html>
+

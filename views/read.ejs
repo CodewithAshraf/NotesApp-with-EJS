@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Read Notes</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+        display: flex;
+        flex-wrap: wrap;
+            min-height: 100vh;
+            background: #f7f7f5;
+            color: #111;
+            font-family: Georgia, "Times New Roman", serif;
+            padding: 50px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        /* Header */
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            border-bottom: 1px solid #111;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 38px;
+            letter-spacing: -1px;
+        }
+
+        .header p {
+            color: #777;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        /* Notes */
+
+        .notes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        /* Note Card */
+
+        .note-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 28px;
+            min-height: 200px;
+            transition: 0.25s ease;
+        }
+
+        .note-card:hover {
+            border-color: #111;
+            transform: translateY(-4px);
+        }
+
+        .note-card h2 {
+            font-size: 24px;
+            margin-bottom: 18px;
+        }
+
+        .note-card h3 {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+            margin-bottom: 7px;
+        }
+
+        .note-card p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 650px) {
+
+            body {
+                padding: 30px 15px;
+            }
+
+            .header {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .notes {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header class="header">
+            <h1>My Notes.</h1>
+            <p>Thoughts worth keeping.</p>
+        </header>
+
+
+        <section class="notes">
+
+            <!-- Note 1 -->
+
+            <article class="note-card">
+
+                <h3>Title</h3>
+                <h2>Learning JavaScript</h2>
+
+                <h3>Description</h3>
+                <p>
+                    Today I learned about functions, arrays,
+                    objects and how JavaScript works with the DOM.
+                </p>
+
+            </article>
+
+
+            <!-- Note 2 -->
+
+            <article class="note-card">
+
+                <h3>Title</h3>
+                <h2>My Project Idea</h2>
+
+                <h3>Description</h3>
+                <p>
+                    I want to build a simple notes application
+                    using HTML, CSS, JavaScript and localStorage.
+                </p>
+
+            </article>
+
+
+            <!-- Note 3 -->
+
+            <article class="note-card">
+
+                <h3>Title</h3>
+                <h2>Things To Learn</h2>
+
+                <h3>Description</h3>
+                <p>
+                    Practice JavaScript DOM manipulation,
+                    APIs, localStorage and asynchronous JavaScript.
+                </p>
+
+            </article>
+
+
+            <!-- Note 4 -->
+
+            <article class="note-card">
+
+                <h3>Title</h3>
+                <h2>Weekend Plans</h2>
+
+                <h3>Description</h3>
+                <p>
+                    Finish the notes project, push it to GitHub
+                    and start working on the next JavaScript project.
+                </p>
+
+            </article>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
+```
